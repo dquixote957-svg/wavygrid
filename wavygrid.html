@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wavy grid</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .grid {
+    width: 500px;
+    height: 500px;
+    background:
+      repeating-linear-gradient(#09F 0 2px, transparent 2px 40px),
+      repeating-linear-gradient(90deg, #09F 0 2px, transparent 2px 40px);
+    animation: wave 4s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 10px #09F);
+    transform: perspective(800px) rotateX(50deg);
+  }
+
+  @keyframes wave {
+    0% {
+      transform: perspective(800px) rotateX(50deg) translateY(0);
+      filter: drop-shadow(0 0 8px #0FF);
+    }
+    50% {
+      transform: perspective(800px) rotateX(50deg) translateY(-20px) scale(1.02);
+      filter: drop-shadow(0 0 20px #0FF);
+    }
+    100% {
+      transform: perspective(800px) rotateX(50deg) translateY(0);
+      filter: drop-shadow(0 0 8px #0FF);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+</body>
+</html>
