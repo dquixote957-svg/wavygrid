@@ -1,2 +1,2 @@
 # wavygrid
-Practice grids.
+Practiced making grids, made this cool thing!
